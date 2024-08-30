@@ -14,8 +14,15 @@ class FirstController extends AbstractController
     // création de la méthode pour notre page d'accueil
     public function index(): Response
     {
-        return new Response("<html><body><h1>Hello</h1></body></html>");
+        return new Response("<html><body><h1>Homepage</h1>
+<nav><a href='./'>Accueil</a> | <a href='./contact'>Contact</a> | <a href='./json' target='_blank'>json</a></nav></body></html>");
     }
+
+    public function rami(): Response
+    {
+        return new Response("<html><body><h1>Contact</h1><nav><a href='./'>Accueil</a> | <a href='./contact'>Contact</a> | <a href='./json' target='_blank'>json</a></nav></body></html>");
+    }
+
     // attributs devenus inutiles #[Route('/json', name: 'my_json')]
     public function myJson(): JsonResponse
     {
