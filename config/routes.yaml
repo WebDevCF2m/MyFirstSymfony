@@ -4,6 +4,10 @@
 #        namespace: App\Controller
 #    type: attribute
 
+homepage:
+    path: /
+    controller: App\Controller\FirstController::index
+
 my_json:
     path: /json
     controller: App\Controller\FirstController::myJson

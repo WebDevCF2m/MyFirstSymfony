@@ -97,3 +97,34 @@ class FirstController extends AbstractController
 }
 
 ```
+
+### Création d'une méthode et d'une route
+
+
+La méthode dans `FirstController.php`
+```php
+# src/Controller/FirstController.php
+# ...
+// Appel des réponses http en mode text
+use Symfony\Component\HttpFoundation\Response;
+
+# ...
+
+// création de la méthode pour notre page d'accueil
+    public function index(): Response
+    {
+        return new Response("<html><body><h1>Hello</h1></body></html>");
+    }
+# ...
+```
+
+Et
+
+```yaml
+# config/routes.yaml
+# ...
+homepage:
+  path: /
+  controller: App\Controller\FirstController::index
+```
+
